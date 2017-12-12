@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- MageConf/FrontendGridUi/etc/frontend/routes.xml -->
+<!--
+  ~  Copyright © 2017 Magento. All rights reserved.
+  ~  See COPYING.txt for license details.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="frontend" frontName="frontend">
+            <module name="MageConf_FrontendGridUi"/>
+        </route>
+    </router>
+</config>
