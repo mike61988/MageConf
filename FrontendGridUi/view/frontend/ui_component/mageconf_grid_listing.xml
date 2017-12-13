@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!-- MageConf/FrontendGridUi/view/frontend/ui_component/mageconf_grid_listing.xml -->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mageconf_grid_listing.mageconf_grid_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>mageconf_grid_columns</spinner>
+        <deps>
+            <dep>mageconf_grid_listing.mageconf_grid_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="mageconf_grid_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">grid_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="MageConf\FrontendGridUi\Ui\Component\DataProvider" name="mageconf_grid_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>grid_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <columns name="mageconf_grid_columns">
+        <column name="grid_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+        <column name="qty">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Quantity</label>
+            </settings>
+        </column>
+        <!--<column name="price" component="MageConf_FrontendGridUi/js/render/price">-->
+        <column name="price">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Price</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
