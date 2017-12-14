@@ -1,0 +1,19 @@
+<!-- MageConf/FrontendGridAjax/view/frontend/web/template/grid.html -->
+<table class="products-table data table base list">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% _.each(products, function(value, key) { %>
+            <tr>
+                <td><%- value.name %></td>
+                <td><%- value.qty %></td>
+                <td><%- value.price %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
