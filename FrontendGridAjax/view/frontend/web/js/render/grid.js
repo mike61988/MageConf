@@ -4,14 +4,15 @@ define([
     'Magento_Catalog/js/price-utils',
     'mage/template',
     'text!MageConf_FrontendGridAjax/template/grid.html',
-    'underscore'
-], function ($, priceUtils, mageTemplate, gridTpl, _) {
+    'underscore',
+    'mage/url'
+], function ($, priceUtils, mageTemplate, gridTpl, _, urlBuilder) {
     "use strict";
 
     $.widget('mageconf.ajax', {
         options: {
             template: gridTpl,
-            url: '/ajax/grid/ajaxData',
+            url: urlBuilder.build('/ajax/grid/ajaxData'),
             type: 'post',
             dataType: 'json',
             format: {
